@@ -1,0 +1,204 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=4cm,right=2cm,top=2cm,bottom=4cm]{geometry}
+\usepackage{graphicx}
+\author{\textbf{Yoleivys Delgado Beleño}}
+\date{31 Agosto del 2017}
+\title{\textbf{Tutorial breve de los comando básicos de Bash}}
+
+\begin{document}
+\maketitle
+
+
+
+\section{¿Qué es bash?}
+Bash es un interpretador de comandos utilizados sobre el sistema operativos Linux. Su función es mediar entre el usuario y el sistema.
+
+\section{Visualización de archivos y rutas}
+\begin{itemize}
+\item{\textbf{ls} }: Enlista  archivos y directorios, Ej:ls
+\item{\textbf{ls -a}}: Enlista los archivos y directorios incluyendo los archivos ocultos, Ej: ls -a
+\item{\textbf{ls -l}}: Enlista los archivos y directorios, incluyendo los permisos, usuarios y fechas, Ej. ls -l
+\item{\textbf{ls -al}}: Combina las dos opciones anteriores Ej. ls -l [ruta]
+\item {\textbf pwd}: Muestra la ruta  en la que te encuentas actualmente Ej:pwd
+\end{itemize}
+
+\section{ Atajos}
+Facilitan la digitación en la terminal. Algunos ejemplos de ellos son:
+
+\begin{itemize}
+\item \textbf{Teclas arriba, abajo}: Exploras en el historial de la terminal.
+\item\textbf{Tecla Tab}: Completa la palabra si esta en el historial de la terminal.
+\end{itemize}
+
+
+\section{Moverte entre directorios}
+\begin{itemize}
+\item \textbf{cd} (solo): Regresas al directorio raiz, Ej:cd
+\item \textbf{cd} : Entrar en un directorio Ej: cd Documentos (Entras en el directorio Documentos).
+\item \textbf{cd .. o cd../..}: Regresas una o dos niveles desde donde estas.
+\end{itemize}
+
+\section{Crear Archivos y directorios}
+\begin{itemize}
+\item \textbf{mkdir}: Crea un directorio, Ej: mkdir Yoleivys (creas el directorio Yoleivys en la ruta que estes)
+\item \textbf{mkdir -p}: Crear varios niveles de directorios a la vez Ej:mkdir -p /Yoleivys/fortran/notas (creas el directorio notas  dentro de fortran y este a su vez esta dentro de Yoleivys )
+\item \textbf{mkdir -pv}: Muestra un mensaje en cada directorio 
+
+Ej: mkdir -pv Yoleivys/fortran/nota (Te muestra un mensaje de los respectivos directorios que se han creado)
+\item \textbf{touch} [opciones]<nombre del archivo>: Crea un archivo en blanco Ej: touch ejemplo1.txt
+\end{itemize}
+
+\section{Copiar archivos y directorios}
+\begin{itemize}
+\item \textbf{cp}: Permite copiar archivos o directorios.\\ cp [opciones] <origen> <destino>.
+\begin{enumerate}
+\item Ej1: cp notas.txt Universidad (copias el archivo notas.txt en el directorio Universidad.\\
+\item Ej2: cp Fortran Universidad (Copias el directorio Fortran  en el directorio Universidad estando el directorio fortran vacio.\\
+\item Ej3: cp notas1.txt notas2.txt (copias el contenido de notas1.txt en notas2.txt)
+\end{enumerate}
+\item \textbf{cp -r}: copiar todo lo de un directorio en otro Ej cp -r Yoly Carlos ( copia todo lo del directorio Yoly en el directorio Carlos.
+\end{itemize}
+
+\section{Rutas}
+\subsection{Rutas absolutas}
+Las rutas absolutan especifican una localización (archivo o directorio ) con relacion a la raiz. El directorio raiz se representa con un  slash (/).
+
+Ej: pwd---/home/yoleivys/Descargas
+\subsection{Rutas Relativas}
+Las rutas relativas especifican una localización (archivo o directorio ) con relacion de donde estemos recientemente en el sistema. Estas no inician con un slash.
+\subsection{Mas rutas}
+
+(tilde): Es un shortcut para el directorio home Ej: si el directorio home es home/yoleivys, podemos referir al directorio Documentos como ~/Documentos.
+
+.(dot): Es una referencia a nuestro reciente directorio.
+
+.(dotdot):Es una referencia al directorio padre.Ej: ls ../.. (Estando en la ruta /home/yoleivys te enlista lo que este en el directorio raiz).
+
+\section{Nombres}
+Es importante tener presente que Linux es muy sensible a los espacios y nombres, si tu nombre son dos o mas palabras entonces usa:
+\begin{enumerate}
+\item \textbf{comillas ("")}: Cualquier cosa dentro de las comillas es considerado un solo nombre Ej: cd " Yoleivys Unison" (Entro a la carpeta Yoleivys Unison)
+\item \textbf{Backslash} : Tambien es usado para escribir un solo nombre Ej:cd YoleivysB Unison 
+\end{enumerate}
+
+\section{Ocultar archivos y directorios}
+Si un arcivo inicia como un  . es considerado un archivo oculto y por tanto para crear un archivo oculto se inicas su nombre con el comando un  . Ej  .Notas, si quieres que el archivo deje de estar oculto solo le quitas el punto y listo.
+
+\section{Pagina del manual}
+\begin{itemize}
+\item \textbf{man} [comando a mirar]: Te muestra para que se usa el comando Ej: man ls (Muestra una breve descripcion del comando ls).
+\item \textbf{man -k }<termino a buscar> hace una busqueda de palabras en el manual page conteniendo la palabra dada Ej: man -k copy 
+\item /<termino> dentro del manual page, hace una busqueda del termino
+\item \textbf{n}: despues de realizar una busqueda dentro del manual page, sleccionan el siguiente item
+\end{itemize}
+
+\section{Eliminar directorios o archivos}
+\begin{itemize}
+\item \textbf{rmdir}: Elimina directorios Ej:mrdir Yoleivys/fortran/notas (remueves el directorio notas siempre que este este vacio) 
+\item \textbf{rmdir -pv}: remueve todos los directorios y muestra los mensajes del proceso que se hizo Ej: rmdir -pv Yoleivys/fortran/notas
+\item \textbf{rm}: Elimina archivo no directorios Ej rm Notas.txt (estando dentro de la ruta especifica.
+\end{itemize}
+Cuando el directorio no este vacio se usa el comando
+\begin{itemize}
+\item \textbf{rm -r}: Elimina directorios y todo lo que hay dentro de el Ej: rm -r prueba1 (Elimina del directorio prueba1 y todo lo que esta dentro de este).
+\end{itemize}
+
+\section{Mover un archivo o directorio}
+\begin{itemize}
+\item \textbf{mv}: comando para mover directorios o archivos Ej mv ejemplo1 yoly (mueve el archivo ejemplo1 en el directorio yoly) Ej2: mv Notas Unison/NotasMecanica (mueve el directorio notas al directorios unison con el nombre NotasMecanica,lo renombra NotasMecanicas)
+
+\end{itemize}
+
+\section{Renombrar archivos y directorios}
+\begin{itemize}
+\item \textbf{mv}: Tambien es un comando usado para renombrar directorios Ej: en la carpeta home tenemos prueba1 prueba2 prueba3 Ej: mv prueba1 prueba (renombra el directorio prueba 1 como  prueba)
+\end{itemize}
+
+\section{Ver Archivos}
+\subsection{Editor Vi}
+vi es un editor ejecutado desde la terminal de linux Ej: vi <nombre del archivo>. (Si el archivo no existe te lo crea automaticamente)
+Algunos comandos basicos de Vi son
+\begin{itemize}
+\item i: para inservar
+\item Esc: regresas al mode Edit
+\item :q!:Descartas todo los cambios desde la ultima vez que guardaste
+\item :w: guardas el archivo pero no sales
+\item :wq:guardas y sales
+\end{itemize}
+\textbf{Nota}: para sacarlos dos puntos preciosa Esc
+
+\subsection{Otras formas de ver archivos}
+\begin{itemize}
+\item \textbf{cat} <nombre del archivo>:Te permite ver lo que esta dentro del archivo (es convenientes para archivos pequeños)
+\item \textbf{less} <nombre del archivo>:Te permite leer archivo cuando son mas grandes
+\end{itemize}
+cuando estes dentro del archivo puedes
+\begin{enumerate}
+\item moverte arriba y abajo con las techas arriba y abajo.
+\item adelantar pagina con la barra espaciadora
+\item regresarte con la letra b
+\item salir con la letra q
+\end{enumerate}
+
+\section{Wildcards o Comodines}
+
+los comodines son un conjunto de bloques de construccion que permiten crear un patron que definen un conjunto de archivos o directorios
+\begin{itemize}
+\item \textbf{ls b*}: te filtra todos los documentos iniciados con b
+\item \textbf{ls }[Ruta] *.txt: Te filtra todos los archivos terminados en .txt
+\item \textbf{ls ?i*}: Te filtra todos los archivos o directorios cuya segunda letra es i
+\item \textbf{ls *.???}: Te filtra todos los archivos que tengan tres letras en su extension
+\item \textbf{is [sv]}*: los arteriscos ayudan a especificar en este caso te busca los archivos iniciados con s y v
+\end{itemize}
+
+\section{Permisos}
+
+Hay tres atributos basicos para archivos simples en linux 
+
+r (read)
+
+w (write)
+
+x (execute)
+
+
+Por cada archivo se definen tres conjuntos de personas a las que se le pueden otorgar permisos.
+
+
+owner:Dueño del archivo
+
+group:Cada archivo pertenece a un grupo
+
+other:El permiso que puedes darle a otros
+ 
+ls -l [ruta]:Para ver permisos de un archivo por ejemplo
+
+
+-rw-r--r-- 1 yoleivys yoleivys
+
+drwxr-xr-x 2 yoleivys yoleivys
+
+
+En los ejemplos de arriba d me dice que es un directorio y el - que es un archivo normal, las tres primeras letras son los permisos para el dueño, las tres siguiente para el grupo y las tres ultimas para otros.
+
+\begin{itemize}
+
+\item \textbf{chmod} [permisos][rutas]:Permite cambiar permisos en un archivo o directorio.
+\end{itemize}
+Permiso otorgado a: u= usuario, g= grupo, other, all
+
+consediendo o revocando (+ o -)
+
+permisos read(r), write (w) o execute (x)
+
+
+Ej1: chmod g+w ejemplo1 (al grupo le doy el permiso de escribir en el ejemplo1).
+
+Ej2: chmod g+wx ejemplo1 (al grupo le doy el permiso de escribir y ejecutar el archivo ejemplo1)
+
+Ej3: chmod go-x ejemplo1 (al grupo y a otros le quito el permiso de ejecutar)
+
+
+\end{document}

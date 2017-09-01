@@ -1,0 +1,104 @@
+COMANDOS BÁSICOS DE BASH
+
+*ls: Enlista los contenidos del directorio donde te encuentras Ej: ls
+*ls -a: Te muestra los archivos o directorios incluyendo los archivos ocultos 
+*ls -l: Te muestra los usuarios, permisos y la fecha de los archivos
+*ls -la: Combina los dos comandos anteriores
+*Shortcut: Son accesos directos a la terminal Ej: Las teclas arriba, abajo, izquierda y derecha
+(Explora en el historial de comandos ), la techa Tap (Completa la palabra) 
+*pwd: Te muestra en que directorio estas trabajando Ej: pwd
+*cd (solo): Te regresa al directorio raiz EJ: cd
+*cd: Te permite entrar en un directorio Ej: cd Descargas (Entras al directorio Deacargas)
+*cd..: Te permite regresar a donde estabas un nivel Ej: cd .. 
+*mkdir: Te permite crear un directorio  Ej: mkdir Notas (Creas un directorio llamado notas)
+*cp: Copia un archivo a otro Ej: cp Notas Comandos (Copias el archivo notas en el directorio comandos)
+*cp -r: copia un directorio en otro Ej: Notas Escritorio
+*echo: Visualizas imagenes 
+*Absolute paths: Especifican una localización (archivo o directorio) con relación a la raiz, ellos inician con un slash (/)
+*Relative paths: Especifican una localización (archivo o directorio) en relación donde estemos recientemente en el sistema. Ellos no inician con slash
+Mas rutas 
+*~(tilde): Es un shortcut para el directorio home Ej: si tu directorio home es home/yoleivys, entonces nos podemos referir al directorio documentos con la ruta /home/yoleivys/Documentos o ~/Documentos
+*.(dot): Es una referencia a nuestro reciente directorio 
+*..(dotdot) Este es una referencia al directorio padre: Ej:ls ../../ (estando en la ruta /home/yoleivys) y te enlista lo que tienes en el directorio raiz 
+*file [paths]:Se usa para encontrar documentos o directorios
+*Linux es muy sensible a los espacios y los nombres 
+*Quotes: cualquier cosas dentro de los quotes es considerado un solo nombre Ej:cd "Yoleivys Unison"
+*Backslash (\): Es usado para escribir un solo nombre Ej: cd Yoleivys\ Unison " hay un espacio despues del backslash.
+OCULTAR ARCHIVOS Y DERECTORIOS
+*Si un arcivo inicia como un  . es considerado un archivo oculto y por tanto para crear un archivo oculto tu inicas su nombre con el comando un  . Ej  .Notas, si quieres que el archivo deje de estar oculto solo le quitas el punto y listo.
+*man [comando a mirar]: Te muestra para que se usa el comando Ej: man ls.
+*rm: Elimina archivo no directorios Ej rm Notas.txt (estando dentro de la ruta especifica.
+*man -k <termino a buscar> hace una busqueda de palabras en el manual page conteniendo la palabra dada Ej: man -k copy 
+*/<termino> dentro del manual page, hace una busqueda del termino
+*n: despues de realizar una busqueda dentro del manual page, sleccionan el siguiente item
+CREAR DIRECTORIOS 
+*mkdir: Te permite crear directorios Ej: mkdir notas
+*mkdir -p: Te permite crear varios niveles de directorios a la vez Ej:mkdir -p /Yoleivys/fortran/notas
+*mkdir -pv: Muestra un mensaje en cada directorio Ej: mkdir -pv Yoleivys/fortran/notas
+ELIMINAR DIRECTORIOS 
+*rmdir: comando para remover directorios Ej:mrdir Yoleivys/fortran/notas (remueves el directorio notas) 
+*rmdir -pv: remueve todos los directorios y muestra los mensajes del proceso que se hizo Ej: rmdir -pv Yoleivys/fortran/notas
+CREAR UN ARCHIVO EN BLANCO
+*touch[opciones]<nombre del archivo>: Crea un archivo en blanco Ej: touch ejemplo1
+COPIAR ARCHIVOS O DIRECTORIOS
+*cp: Te permite copiar archivos o directorios cp [opciones]<origen> <destino>
+Ej: cp Yoleivys Universidad (copio el archivo yoleivys en el directorio yoly
+*cp -r: copiar todo lo de un directorio en otro Ej cp -r Yoly Carlos ( copia todo lo del directorio Yoly en el directorio Carlos.
+MOVER UN ARCHIVO O DIRECTORIO
+*mv: comando para mover directorios o archivos Ej mv ejemplo1 yoly (mueve el archivo ejemplo1 en el directorio yoly Ej2: mn Notas Unison/Notasuni (mueve el directorio notas al directorios unison con el nombre Notasuniy lo renombra Notasuni)
+
+RENOMBRAR ARCHIVOS Y DIRECTORIOS
+*mv: tambien es un comando usado para remonbrar directorios Ej: en la carpeta home tenemos prueba1 prueba2 prueba3 Ej: mv prueba1 prueba (renombra el directorio prueba 1 en prueba) 
+ 
+REMOVER UN ARCHIVO Y DIRECTORIOS NO VACIOS
+*rm: Elimina un archivo Ej: rm ejemplo1 te elimina el arhivo ejemplo1
+*rm -r: Elimina directorios y todo lo que hay dentro de el Ej: rm -r prueba1 (Elimina del directorio prueba1 y todo lo que esta dentro de este)
+
+EDITOR VI
+vi: es un editor ejecutado desde la terminal de linux Ej:  vi nombredelarchivo
+(Si el archivo no existe te lo crea automaticamente)
+i: para inservar
+*Esc: regresas al mode Edit
+*:q!:Descartas todo los cambios desde la ultima vez que guardaste
+*:w: guardas el archivo pero no sales
+:wq:guardas y sales
+*Nota: para sacarlos dos puntos preciosa Esc
+
+OTRAS FORMAS DE VER ARCHIVOS
+*cat <nombre del archivo>:Te permite ver lo que esta dentro del archivo (es convenientes para archivos pequeños)
+*less <nombre del archivo>:Te permite leer archivo cuando son mas grandes
+cuando estes dentro del archivo puedes
+* moverte arriba y abajo con las techas up y dowm
+*adelantar pagina con la barra espaciadora
+*regresarte con la letra b
+*salir con la letra q
+
+WILDCARDS
+los comodines son un conjunto de bloques de construccion que permiten crear un patron que definen un conjunto de archivos o directorios
+*ls b*: te filtra todos los documentos iniciados con b
+*ls [Ruta] *.txt: Te filtra todos los archivos terminados en .txt
+*ls ?i*: Te filtra todos los archivos o directorios cuya segunda letra es i
+*ls *.???: Te filtra todos los archivos que tengan tres letras en su extension
+*is [sv]*: los arteriscos ayudan a especificar en este caso te busca los archivos iniciados con s y v
+
+PERMISOS
+*r read
+*w write
+*x execute
+Por cada archivo se definen tres conjuntos de personas a las que se le pueden otorgar permisos
+*owner:Dueño del archivo
+*group:cada archivo pertenece a un grupo
+*other: el permiso que puedes darle a otros
+ *ls -l [ruta]:Para ver permisos de un archivo Ej
+ -rw-r--r-- 1 yoleivys yoleivys
+ drwxr-xr-x 2 yoleivys yoleivys
+ en los ejemplos de arriba
+ d me dice que es un directorio y el - que es un archivo normal
+ las tres primeras letras son los permisos para el dueño, las tres siguiente para el grupo y las tres ultimas para otros
+ *chmod [permisos][rutas]:Permite cambiar permisos en un archivo o directorio
+Permiso otorgado a: u= usuario, g= grupo, other, all
+consediendo o revocando (+ o-)
+permisos read(r), write (w) o execute (x)
+Ej: chmod g+w ejemplo1 (al grupo le doy el permiso de escribir en el ejemplo1)
+Ej: chmod g+wx ejemplo1 (al grupo le doy el permiso de escribir y ejecutar el archivo ejemplo1)
+Ej: chmod go-x ejemplo1 (al grupo y a otros le quito el permiso de ejecutar)
