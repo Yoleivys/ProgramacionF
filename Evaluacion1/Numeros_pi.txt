@@ -1,0 +1,6 @@
+cuando n =          10 pi=   3.23231578   
+cuando n =          20 pi=   3.18918467   
+cuando n =          30 pi=   3.17384195     
+cuando n =          40 pi=   3.16597891  
+cuando n =          50 pi=   3.16119814 
+cuando n =         100 pi=   3.15149307 
